@@ -182,3 +182,43 @@ Actualmente el microservicio almacena las tareas en memoria.
 Los datos se pierden cuando se reinicia el servicio.
 
 Esto se utiliza en esta etapa para mantener condiciones similares entre los prototipos que serán comparados.
+
+## Virtualizacion
+
+ **Guía completa paso a paso:** [VIRTUALIZACION.md](https://github.com/FabriCordovaCaceres/servicios-telematicos-cliente-servidor/blob/main/docs/VIRTUALIZACION.md) (en el repositorio de Cliente-Servidor).
+
+### Topología
+
+| VM | IP | Servicios |
+|---|---|---|
+| VM1 `vm1-cs-p2p` | 192.168.56.11 | Cliente-Servidor :3000 + P2P nodo-1 :4001 |
+| VM2 `vm2-p2p-micro` | 192.168.56.12 | P2P nodo-2 :4002 + **Microservicio de tareas :5001** |
+
+### Desplegar este prototipo en VM2
+
+Dentro de VM2 (`ssh grupo10@192.168.56.12`):
+
+```bash
+mkdir -p ~/proyecto && cd ~/proyecto
+git clone https://github.com/FabriCordovaCaceres/servicios-telematicos-microservicios.git
+cd ~/proyecto/servicios-telematicos-microservicios
+docker build -t tele-microservicios .
+docker run -d --name tele-micro-tareas --restart unless-stopped -p 5001:5001 tele-microservicios
+```
+
+Comprobar desde VM1 (a través de la red):
+
+```bash
+curl http://192.168.56.12:5001/health
+curl http://192.168.56.12:5001/tasks
+```
+
+### Actualizar tras un cambio en GitHub
+
+```bash
+cd ~/proyecto/servicios-telematicos-microservicios
+git pull
+docker build -t tele-microservicios .
+docker rm -f tele-micro-tareas
+docker run -d --name tele-micro-tareas --restart unless-stopped -p 5001:5001 tele-microservicios
+```
