@@ -1,0 +1,29 @@
+{
+  "name": "notificaciones",
+  "version": "1.0.0",
+  "description": "Microservicio de notificaciones en tiempo real (WebSocket)",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "lint": "eslint src",
+    "escuchar": "tsx src/tools/escuchar.ts"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.4",
+    "@types/ws": "^8.18.1",
+    "eslint": "^10.12.0",
+    "tsx": "^4.23.15",
+    "typescript": "5.9",
+    "typescript-eslint": "^8.71.1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "ws": "^8.18.0"
+  }
+}

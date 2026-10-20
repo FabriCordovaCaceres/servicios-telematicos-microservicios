@@ -1,5 +1,8 @@
 import { randomUUID } from "node:crypto";
 import type { Task, TaskStatus } from "../models/task";
+import { emitTaskEvent } from "../events/task.events";
+
+const ORIGEN = "servicio-tareas";
 
 const tasks: Task[] = [];
 
@@ -30,6 +33,10 @@ export function createTask(
   };
 
   tasks.push(task);
+
+  // Sprint 2: se avisa al servicio de notificaciones
+  emitTaskEvent({ tipo: "tarea:creada", tarea: task });
+
   return task;
 }
 
@@ -64,16 +71,30 @@ export function updateTask(
   task.updatedBy = data.updatedBy;
   task.version += 1;
 
+  // Sprint 2: se avisa al servicio de notificaciones
+  emitTaskEvent({ tipo: "tarea:actualizada", tarea: task });
+
   return task;
 }
 
 export function deleteTask(id: string): boolean {
   const index = tasks.findIndex((task) => task.id === id);
+  const task = tasks[index];
 
-  if (index === -1) {
+  if (!task) {
     return false;
   }
 
   tasks.splice(index, 1);
+
+  // Sprint 2: se avisa al servicio de notificaciones
+  emitTaskEvent({
+    tipo: "tarea:eliminada",
+    id,
+    version: task.version + 1,
+    updatedAt: Date.now(),
+    updatedBy: ORIGEN,
+  });
+
   return true;
 }

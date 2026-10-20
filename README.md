@@ -222,3 +222,45 @@ docker build -t tele-microservicios .
 docker rm -f tele-micro-tareas
 docker run -d --name tele-micro-tareas --restart unless-stopped -p 5001:5001 tele-microservicios
 ```
+
+---
+
+## Sprint 2 — Servicio de notificaciones por WebSocket (RQ9)
+
+Ahora el sistema tiene dos microservicios independientes:
+
+| Servicio | Carpeta | Puerto | Función |
+|---|---|---|---|
+| Tareas | raíz del repositorio | 5001 | CRUD de tareas (API REST) |
+| Notificaciones | `notificaciones/` | 5002 | Difunde por WebSocket cada cambio a los clientes |
+
+Cada cambio en el servicio de tareas se envía por HTTP (`POST /eventos`) al servicio
+de notificaciones, que lo reenvía por WebSocket (`ws://<servidor>:5002/ws`).
+**Si el servicio de notificaciones está caído, el CRUD de tareas sigue funcionando.**
+
+### Desplegar en VM2
+
+```bash
+cd ~/proyecto/servicios-telematicos-microservicios
+git pull
+docker network create tele-red            # solo la primera vez
+docker build -t tele-micro-notificaciones ./notificaciones
+docker build -t tele-microservicios .
+docker rm -f tele-micro-tareas tele-micro-notificaciones
+docker run -d --name tele-micro-notificaciones --network tele-red --restart unless-stopped -p 5002:5002 tele-micro-notificaciones
+docker run -d --name tele-micro-tareas --network tele-red --restart unless-stopped -p 5001:5001 \
+  -e NOTIFICACIONES_URL=http://tele-micro-notificaciones:5002 tele-microservicios
+```
+
+### Probarlo
+
+- Navegador: `http://192.168.56.12:5002/demo/` (muestra los eventos en vivo).
+- Consola: `docker exec -it tele-micro-notificaciones node dist/tools/escuchar.js ws://localhost:5002/ws`
+- Crear una tarea: `curl -X POST http://192.168.56.12:5001/tasks -H "Content-Type: application/json" -d '{"titulo":"Tarea micro","updatedBy":"vm1"}'`
+
+### Nuevos archivos
+
+`src/events/task.events.ts`, `src/notificaciones/notificador.ts`, carpeta `notificaciones/`
+(servicio completo con su `package.json`, `Dockerfile` y `src/`). Se modificaron
+`src/services/task.service.ts`, `src/index.ts` y `tsconfig.json` (ahora con `"include": ["src"]`
+para no compilar la carpeta `notificaciones/` dentro del servicio de tareas).
