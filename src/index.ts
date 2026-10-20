@@ -1,5 +1,6 @@
 import express from "express";
 import taskRoutes from "./routes/task.routes";
+import { iniciarNotificador } from "./notificaciones/notificador";
 
 const app = express();
 
@@ -30,3 +31,6 @@ app.listen(PORT, () => {
     `Microservicio de tareas iniciado en http://localhost:${PORT}`,
   );
 });
+
+// Sprint 2: cada cambio en las tareas se envía al servicio de notificaciones
+iniciarNotificador();

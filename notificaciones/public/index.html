@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notificaciones — Microservicios</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 760px; margin: 20px auto; padding: 0 12px; }
+    h1 { font-size: 1.3rem; }
+    #estado { padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; color: #fff; background: #c0392b; }
+    #estado.conectado { background: #27ae60; }
+    #registro { background: #f4f4f4; padding: 8px; font-family: monospace; font-size: 0.8rem; min-height: 200px; }
+    #registro div { padding: 3px 0; border-bottom: 1px solid #e2e2e2; }
+  </style>
+</head>
+<body>
+  <h1>Microservicio de notificaciones <span id="estado">desconectado</span></h1>
+  <p>Cada cambio que se haga en el servicio de tareas (puerto 5001) aparece aquí en tiempo real.</p>
+  <div id="registro"></div>
+
+  <script>
+    const registro = document.getElementById("registro");
+    const indicador = document.getElementById("estado");
+
+    function anotar(texto) {
+      const linea = document.createElement("div");
+      linea.textContent = new Date().toLocaleTimeString() + "  " + texto;
+      registro.prepend(linea);
+    }
+
+    function conectar() {
+      const protocolo = location.protocol === "https:" ? "wss" : "ws";
+      const socket = new WebSocket(protocolo + "://" + location.host + "/ws");
+
+      socket.addEventListener("open", () => {
+        indicador.textContent = "conectado";
+        indicador.classList.add("conectado");
+      });
+
+      socket.addEventListener("message", (evento) => {
+        const m = JSON.parse(evento.data);
+        if (m.tipo === "conexion") {
+          anotar(m.mensaje);
+        } else if (m.tipo === "tarea:eliminada") {
+          anotar(m.tipo + " → id " + m.id);
+        } else if (m.tarea) {
+          anotar(m.tipo + " → " + m.tarea.titulo + " [" + m.tarea.estado + ", v" + m.tarea.version + "]");
+        }
+      });
+
+      socket.addEventListener("close", () => {
+        indicador.textContent = "desconectado";
+        indicador.classList.remove("conectado");
+        setTimeout(conectar, 2000);
+      });
+    }
+
+    conectar();
+  </script>
+</body>
+</html>
