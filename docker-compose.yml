@@ -66,6 +66,25 @@ services:
     networks:
       - tele-red
 
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    container_name: tele-api-gateway
+    restart: unless-stopped
+    ports:
+      - "6000:6000"
+    environment:
+      GATEWAY_PORT: "6000"
+      TAREAS_URL: "http://micro-tareas:5001"
+      NOTIFICACIONES_URL: "http://micro-notificaciones:5002"
+    depends_on:
+      - micro-tareas
+      - micro-notificaciones
+    networks:
+      - tele-red
+
+
 networks:
   tele-red:
     driver: bridge
