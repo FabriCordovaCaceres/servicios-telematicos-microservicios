@@ -1,0 +1,217 @@
+{
+  "requisito": "RQ11",
+  "tarea": "T3.4",
+  "arquitectura": "microservicios",
+  "gateway": "http://localhost:6001",
+  "usuarios": 5,
+  "ejecucion": "4f4c9f5b",
+  "fecha": "2026-10-25T02:18:09.024Z",
+  "tareasCreadas": 5,
+  "operacionesRegistradas": 25,
+  "operacionesCRUD": 20,
+  "correctas": 25,
+  "errores": 0,
+  "tiempoTotalMs": 1931,
+  "resultados": [
+    {
+      "usuario": 1,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 151.65,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 2,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 284.03,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 3,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 313.38,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 4,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 360.89,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 5,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 401.95,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 1,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 104.96,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 2,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 122.46,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 3,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 112.14,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 5,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 105.5,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 4,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 119.46,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 1,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 123.07,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 2,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 123.95,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 3,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 123.74,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 4,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 134.59,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 5,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 159.33,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 1,
+      "operacion": "DELETE",
+      "codigo": 204,
+      "duracionMs": 34,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 2,
+      "operacion": "DELETE",
+      "codigo": 204,
+      "duracionMs": 63.48,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 3,
+      "operacion": "DELETE",
+      "codigo": 204,
+      "duracionMs": 74.84,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 4,
+      "operacion": "DELETE",
+      "codigo": 204,
+      "duracionMs": 82.23,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 5,
+      "operacion": "DELETE",
+      "codigo": 204,
+      "duracionMs": 89.84,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 1,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 404,
+      "duracionMs": 38.85,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 2,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 404,
+      "duracionMs": 34.73,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 3,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 404,
+      "duracionMs": 38.9,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 4,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 404,
+      "duracionMs": 67.7,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 5,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 404,
+      "duracionMs": 103.43,
+      "correcto": true,
+      "error": null
+    }
+  ]
+}
