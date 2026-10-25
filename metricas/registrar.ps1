@@ -1,0 +1,1 @@
+﻿param([ValidateSet(2,3,5)][int]$Usuarios=2,[ValidateRange(1,100)][int]$Repeticiones=1); $modulo=Join-Path $PSScriptRoot "medir.ps1"; if (-not (Test-Path $modulo)) { throw "No se encontro medir.ps1" }; & $modulo -Arquitectura micro -Usuarios $Usuarios -Repeticiones $Repeticiones
