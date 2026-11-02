@@ -1,5 +1,5 @@
 
-FROM node:22-alpine
+FROM node:26-alpine
 
 WORKDIR /app
 
@@ -12,6 +12,6 @@ COPY src ./src
 
 RUN npm run build
 
-EXPOSE 6000
+EXPOSE 6001
 
 CMD ["npm", "run", "start"]

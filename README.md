@@ -264,3 +264,54 @@ docker run -d --name tele-micro-tareas --network tele-red --restart unless-stopp
 (servicio completo con su `package.json`, `Dockerfile` y `src/`). Se modificaron
 `src/services/task.service.ts`, `src/index.ts` y `tsconfig.json` (ahora con `"include": ["src"]`
 para no compilar la carpeta `notificaciones/` dentro del servicio de tareas).
+
+---
+
+## Sprint 3 — API Gateway (RQ8), concurrencia (RQ11) y métricas (RQ12)
+
+| Servicio | Carpeta | Puerto | Función |
+|---|---|---|---|
+| API Gateway | `gateway/` | 6001 | Punto de entrada único: `/api/tareas` → servicio de tareas, `/api/notificaciones/...` → notificaciones |
+| Tareas | raíz del repositorio | 5001 | CRUD de tareas |
+| Notificaciones | `notificaciones/` | 5002 | Difusión de eventos por WebSocket |
+
+> Se usa el puerto **6001** (y no 6000) porque los navegadores bloquean el 6000 (`ERR_UNSAFE_PORT`).
+> Limitación: el Gateway reenvía solo HTTP; los clientes WebSocket siguen conectándose a `ws://<VM2>:5002/ws`.
+
+### Desplegar el Gateway en VM2
+
+```bash
+cd ~/proyecto/servicios-telematicos-microservicios
+git pull
+docker build -t tele-api-gateway ./gateway
+docker rm -f tele-api-gateway
+docker run -d --name tele-api-gateway --network tele-red --restart unless-stopped -p 6001:6001 \
+  -e GATEWAY_PORT=6001 \
+  -e TAREAS_URL=http://tele-micro-tareas:5001 \
+  -e NOTIFICACIONES_URL=http://tele-micro-notificaciones:5002 \
+  tele-api-gateway
+```
+
+Probar: `curl http://192.168.56.12:6001/health` y `curl http://192.168.56.12:6001/api/tareas`.
+
+### Simulación y métricas contra las máquinas virtuales
+
+Desde el equipo anfitrión (Windows, con Node.js y los tres repositorios en la misma carpeta):
+
+```powershell
+# Requisito (una sola vez): acceso SSH sin contraseña a VM1 y VM2
+ssh-keygen -t ed25519
+type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh grupo10@192.168.56.11 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+type $env:USERPROFILE\.ssh\id_ed25519.pub | ssh grupo10@192.168.56.12 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+
+# Medir (desde servicios-telematicos-microservicios)
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\metricas\medir-vm.ps1 -Arquitectura cs -Usuarios 2
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\metricas\medir-vm.ps1 -Arquitectura p2p -Usuarios 3
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\metricas\medir-vm.ps1 -Arquitectura micro -Usuarios 5
+```
+
+`medir-vm.ps1` ejecuta el simulador de concurrencia apuntando a las IP de las VMs
+(`SERVIDORES` para Cliente-Servidor y P2P, `GATEWAY_URL` para Microservicios) y, al mismo tiempo,
+registra la latencia TCP desde el anfitrión y el CPU, RAM y red de cada contenedor con `docker stats` (por SSH).
+Los resultados se guardan en `metricas/resultados/metricas-vm-*.json`. El script `medir.ps1` original
+se conserva para la ejecución local (localhost).

@@ -73,9 +73,9 @@ services:
     container_name: tele-api-gateway
     restart: unless-stopped
     ports:
-      - "6000:6000"
+      - "6001:6001"
     environment:
-      GATEWAY_PORT: "6000"
+      GATEWAY_PORT: "6001"
       TAREAS_URL: "http://micro-tareas:5001"
       NOTIFICACIONES_URL: "http://micro-notificaciones:5002"
     depends_on:

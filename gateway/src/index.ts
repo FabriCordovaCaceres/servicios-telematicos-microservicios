@@ -7,7 +7,6 @@ import express, {
   const app = express();
   
   // Configuración del API Gateway
-  //const PORT = Number(process.env.GATEWAY_PORT ?? 6000);
   const PORT = Number(process.env.GATEWAY_PORT ?? 6001);
   
   const TAREAS_URL =
