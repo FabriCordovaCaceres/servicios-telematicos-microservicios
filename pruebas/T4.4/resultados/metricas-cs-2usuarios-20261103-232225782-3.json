@@ -1,0 +1,51 @@
+﻿{
+    "requisito":  "RQ14",
+    "tarea":  "T4.4",
+    "arquitectura":  "cs",
+    "usuarios":  2,
+    "repeticion":  3,
+    "inicio":  "2026-11-03T23:22:20.5617266-04:00",
+    "fin":  "2026-11-03T23:22:25.7135205-04:00",
+    "duracionTotalMs":  5151.79,
+    "codigoSalidaSimulador":  0,
+    "archivoSimulador":  "C:\\Users\\Usuario\\Desktop\\Telematicos\\servicios-telematicos-cliente-servidor\\simulacion\\resultados\\cs-2usuarios-1587b349.json",
+    "operacionesEsperadas":  8,
+    "operacionesRegistradas":  8,
+    "correctas":  8,
+    "errores":  0,
+    "valido":  true,
+    "tiempoRespuestaMedioMs":  51.28,
+    "latenciaConexionTcpMediaMs":  1.23,
+    "cpuMediaPorcentajeProcesos":  4.31,
+    "ramMediaMBProcesos":  75.33,
+    "redRecibidaBytesEquipo":  951,
+    "redEnviadaBytesEquipo":  11532,
+    "puertosObservados":  [
+                              3000
+                          ],
+    "pidsIniciales":  [
+                          20328
+                      ],
+    "notas":  [
+                  "Tiempo de respuesta HTTP: promedio de resultados[].duracionMs del simulador.",
+                  "Latencia: tiempo de conexion TCP a localhost, no es el tiempo HTTP.",
+                  "CPU y RAM: procesos que escuchan en los puertos configurados; CPU normalizada por nucleos logicos.",
+                  "Red: bytes de adaptadores fisicos del equipo, no incluye necesariamente trafico localhost ni aisla el servicio.",
+                  "CPU igual a cero puede significar consumo muy bajo o muestreo insuficiente; no equivale a ausencia de actividad."
+              ],
+    "muestras":  [
+                     {
+                         "instante":  "2026-11-03T23:22:21.1057845-04:00",
+                         "cpuPorcentajeProcesos":  4.31,
+                         "ramBytesProcesos":  78987264,
+                         "redRecibidosBytesDeltaEquipo":  951,
+                         "redEnviadosBytesDeltaEquipo":  11532,
+                         "latenciaTcpMsPorPuerto":  {
+                                                        "3000":  1.23
+                                                    },
+                         "procesos":  [
+                                          "20328"
+                                      ]
+                     }
+                 ]
+}

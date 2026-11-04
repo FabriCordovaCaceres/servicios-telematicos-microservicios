@@ -1,0 +1,70 @@
+﻿{
+    "requisito":  "RQ14",
+    "tarea":  "T4.4",
+    "arquitectura":  "p2p",
+    "usuarios":  20,
+    "repeticion":  3,
+    "inicio":  "2026-11-03T23:26:30.4621982-04:00",
+    "fin":  "2026-11-03T23:26:41.5676747-04:00",
+    "duracionTotalMs":  11105.48,
+    "codigoSalidaSimulador":  0,
+    "archivoSimulador":  "C:\\Users\\Usuario\\Desktop\\Telematicos\\servicios-telematicos-p2p\\simulacion\\resultados\\p2p-20usuarios-56771e41.json",
+    "operacionesEsperadas":  80,
+    "operacionesRegistradas":  80,
+    "correctas":  80,
+    "errores":  0,
+    "valido":  true,
+    "tiempoRespuestaMedioMs":  624.574,
+    "latenciaConexionTcpMediaMs":  1.394,
+    "cpuMediaPorcentajeProcesos":  25.13,
+    "ramMediaMBProcesos":  144.46,
+    "redRecibidaBytesEquipo":  57468,
+    "redEnviadaBytesEquipo":  12708,
+    "puertosObservados":  [
+                              4001,
+                              4002
+                          ],
+    "pidsIniciales":  [
+                          14536,
+                          21544
+                      ],
+    "notas":  [
+                  "Tiempo de respuesta HTTP: promedio de resultados[].duracionMs del simulador.",
+                  "Latencia: tiempo de conexion TCP a localhost, no es el tiempo HTTP.",
+                  "CPU y RAM: procesos que escuchan en los puertos configurados; CPU normalizada por nucleos logicos.",
+                  "Red: bytes de adaptadores fisicos del equipo, no incluye necesariamente trafico localhost ni aisla el servicio.",
+                  "CPU igual a cero puede significar consumo muy bajo o muestreo insuficiente; no equivale a ausencia de actividad."
+              ],
+    "muestras":  [
+                     {
+                         "instante":  "2026-11-03T23:26:30.9917978-04:00",
+                         "cpuPorcentajeProcesos":  50.16,
+                         "ramBytesProcesos":  151375872,
+                         "redRecibidosBytesDeltaEquipo":  57136,
+                         "redEnviadosBytesDeltaEquipo":  12555,
+                         "latenciaTcpMsPorPuerto":  {
+                                                        "4001":  1.565,
+                                                        "4002":  1.009
+                                                    },
+                         "procesos":  [
+                                          "14536",
+                                          "21544"
+                                      ]
+                     },
+                     {
+                         "instante":  "2026-11-03T23:26:39.1423388-04:00",
+                         "cpuPorcentajeProcesos":  0.1,
+                         "ramBytesProcesos":  151580672,
+                         "redRecibidosBytesDeltaEquipo":  332,
+                         "redEnviadosBytesDeltaEquipo":  153,
+                         "latenciaTcpMsPorPuerto":  {
+                                                        "4001":  1.99,
+                                                        "4002":  1.01
+                                                    },
+                         "procesos":  [
+                                          "14536",
+                                          "21544"
+                                      ]
+                     }
+                 ]
+}

@@ -1,0 +1,51 @@
+﻿{
+    "requisito":  "RQ14",
+    "tarea":  "T4.4",
+    "arquitectura":  "cs",
+    "usuarios":  20,
+    "repeticion":  1,
+    "inicio":  "2026-11-03T23:23:34.6434791-04:00",
+    "fin":  "2026-11-03T23:23:39.3460529-04:00",
+    "duracionTotalMs":  4702.57,
+    "codigoSalidaSimulador":  0,
+    "archivoSimulador":  "C:\\Users\\Usuario\\Desktop\\Telematicos\\servicios-telematicos-cliente-servidor\\simulacion\\resultados\\cs-20usuarios-f9275a3c.json",
+    "operacionesEsperadas":  80,
+    "operacionesRegistradas":  80,
+    "correctas":  80,
+    "errores":  0,
+    "valido":  true,
+    "tiempoRespuestaMedioMs":  366.526,
+    "latenciaConexionTcpMediaMs":  1.209,
+    "cpuMediaPorcentajeProcesos":  27.94,
+    "ramMediaMBProcesos":  78.22,
+    "redRecibidaBytesEquipo":  1819,
+    "redEnviadaBytesEquipo":  13158,
+    "puertosObservados":  [
+                              3000
+                          ],
+    "pidsIniciales":  [
+                          20328
+                      ],
+    "notas":  [
+                  "Tiempo de respuesta HTTP: promedio de resultados[].duracionMs del simulador.",
+                  "Latencia: tiempo de conexion TCP a localhost, no es el tiempo HTTP.",
+                  "CPU y RAM: procesos que escuchan en los puertos configurados; CPU normalizada por nucleos logicos.",
+                  "Red: bytes de adaptadores fisicos del equipo, no incluye necesariamente trafico localhost ni aisla el servicio.",
+                  "CPU igual a cero puede significar consumo muy bajo o muestreo insuficiente; no equivale a ausencia de actividad."
+              ],
+    "muestras":  [
+                     {
+                         "instante":  "2026-11-03T23:23:35.1746626-04:00",
+                         "cpuPorcentajeProcesos":  27.94,
+                         "ramBytesProcesos":  82018304,
+                         "redRecibidosBytesDeltaEquipo":  1819,
+                         "redEnviadosBytesDeltaEquipo":  13158,
+                         "latenciaTcpMsPorPuerto":  {
+                                                        "3000":  1.209
+                                                    },
+                         "procesos":  [
+                                          "20328"
+                                      ]
+                     }
+                 ]
+}

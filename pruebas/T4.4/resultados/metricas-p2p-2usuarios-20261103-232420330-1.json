@@ -1,0 +1,55 @@
+﻿{
+    "requisito":  "RQ14",
+    "tarea":  "T4.4",
+    "arquitectura":  "p2p",
+    "usuarios":  2,
+    "repeticion":  1,
+    "inicio":  "2026-11-03T23:24:16.2039831-04:00",
+    "fin":  "2026-11-03T23:24:20.2680308-04:00",
+    "duracionTotalMs":  4064.05,
+    "codigoSalidaSimulador":  0,
+    "archivoSimulador":  "C:\\Users\\Usuario\\Desktop\\Telematicos\\servicios-telematicos-p2p\\simulacion\\resultados\\p2p-2usuarios-30c2e888.json",
+    "operacionesEsperadas":  8,
+    "operacionesRegistradas":  8,
+    "correctas":  8,
+    "errores":  0,
+    "valido":  true,
+    "tiempoRespuestaMedioMs":  55.735,
+    "latenciaConexionTcpMediaMs":  0.956,
+    "cpuMediaPorcentajeProcesos":  7.15,
+    "ramMediaMBProcesos":  134.75,
+    "redRecibidaBytesEquipo":  426,
+    "redEnviadaBytesEquipo":  277,
+    "puertosObservados":  [
+                              4001,
+                              4002
+                          ],
+    "pidsIniciales":  [
+                          14536,
+                          21544
+                      ],
+    "notas":  [
+                  "Tiempo de respuesta HTTP: promedio de resultados[].duracionMs del simulador.",
+                  "Latencia: tiempo de conexion TCP a localhost, no es el tiempo HTTP.",
+                  "CPU y RAM: procesos que escuchan en los puertos configurados; CPU normalizada por nucleos logicos.",
+                  "Red: bytes de adaptadores fisicos del equipo, no incluye necesariamente trafico localhost ni aisla el servicio.",
+                  "CPU igual a cero puede significar consumo muy bajo o muestreo insuficiente; no equivale a ausencia de actividad."
+              ],
+    "muestras":  [
+                     {
+                         "instante":  "2026-11-03T23:24:16.7500932-04:00",
+                         "cpuPorcentajeProcesos":  7.15,
+                         "ramBytesProcesos":  141295616,
+                         "redRecibidosBytesDeltaEquipo":  426,
+                         "redEnviadosBytesDeltaEquipo":  277,
+                         "latenciaTcpMsPorPuerto":  {
+                                                        "4001":  1.003,
+                                                        "4002":  0.909
+                                                    },
+                         "procesos":  [
+                                          "14536",
+                                          "21544"
+                                      ]
+                     }
+                 ]
+}
