@@ -1,0 +1,59 @@
+﻿{
+    "requisito":  "RQ14",
+    "tarea":  "T4.4",
+    "arquitectura":  "micro",
+    "usuarios":  20,
+    "repeticion":  1,
+    "inicio":  "2026-11-03T23:03:09.7247190-04:00",
+    "fin":  "2026-11-03T23:03:17.7991998-04:00",
+    "duracionTotalMs":  8074.48,
+    "codigoSalidaSimulador":  0,
+    "archivoSimulador":  "C:\\Users\\Usuario\\Desktop\\Telematicos\\servicios-telematicos-microservicios\\simulacion\\resultados\\micro-20usuarios-fb963dd6.json",
+    "operacionesEsperadas":  100,
+    "operacionesRegistradas":  100,
+    "correctas":  100,
+    "errores":  0,
+    "valido":  true,
+    "tiempoRespuestaMedioMs":  637.163,
+    "latenciaConexionTcpMediaMs":  1.567,
+    "cpuMediaPorcentajeProcesos":  156.68,
+    "ramMediaMBProcesos":  172.68,
+    "redRecibidaBytesEquipo":  8325,
+    "redEnviadaBytesEquipo":  785,
+    "puertosObservados":  [
+                              5001,
+                              5002,
+                              6001
+                          ],
+    "pidsIniciales":  [
+                          18060,
+                          7480,
+                          23916
+                      ],
+    "notas":  [
+                  "Tiempo de respuesta HTTP: promedio de resultados[].duracionMs del simulador.",
+                  "Latencia: tiempo de conexion TCP a localhost, no es el tiempo HTTP.",
+                  "CPU y RAM: procesos que escuchan en los puertos configurados; CPU normalizada por nucleos logicos.",
+                  "Red: bytes de adaptadores fisicos del equipo, no incluye necesariamente trafico localhost ni aisla el servicio.",
+                  "CPU igual a cero puede significar consumo muy bajo o muestreo insuficiente; no equivale a ausencia de actividad."
+              ],
+    "muestras":  [
+                     {
+                         "instante":  "2026-11-03T23:03:10.3230746-04:00",
+                         "cpuPorcentajeProcesos":  156.68,
+                         "ramBytesProcesos":  181067776,
+                         "redRecibidosBytesDeltaEquipo":  8325,
+                         "redEnviadosBytesDeltaEquipo":  785,
+                         "latenciaTcpMsPorPuerto":  {
+                                                        "5001":  1.092,
+                                                        "5002":  2.409,
+                                                        "6001":  1.201
+                                                    },
+                         "procesos":  [
+                                          "23916",
+                                          "7480",
+                                          "18060"
+                                      ]
+                     }
+                 ]
+}

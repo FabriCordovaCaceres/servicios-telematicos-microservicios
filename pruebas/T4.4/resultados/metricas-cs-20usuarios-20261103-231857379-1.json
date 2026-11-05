@@ -1,0 +1,64 @@
+﻿{
+    "requisito":  "RQ14",
+    "tarea":  "T4.4",
+    "arquitectura":  "cs",
+    "usuarios":  20,
+    "repeticion":  1,
+    "inicio":  "2026-11-03T23:18:51.3494529-04:00",
+    "fin":  "2026-11-03T23:18:57.2425842-04:00",
+    "duracionTotalMs":  5893.13,
+    "codigoSalidaSimulador":  0,
+    "archivoSimulador":  "C:\\Users\\Usuario\\Desktop\\Telematicos\\servicios-telematicos-cliente-servidor\\simulacion\\resultados\\cs-20usuarios-a7376b44.json",
+    "operacionesEsperadas":  80,
+    "operacionesRegistradas":  80,
+    "correctas":  80,
+    "errores":  0,
+    "valido":  true,
+    "tiempoRespuestaMedioMs":  359.425,
+    "latenciaConexionTcpMediaMs":  1.656,
+    "cpuMediaPorcentajeProcesos":  10.65,
+    "ramMediaMBProcesos":  74.54,
+    "redRecibidaBytesEquipo":  3341,
+    "redEnviadaBytesEquipo":  407,
+    "puertosObservados":  [
+                              3000
+                          ],
+    "pidsIniciales":  [
+                          20328
+                      ],
+    "notas":  [
+                  "Tiempo de respuesta HTTP: promedio de resultados[].duracionMs del simulador.",
+                  "Latencia: tiempo de conexion TCP a localhost, no es el tiempo HTTP.",
+                  "CPU y RAM: procesos que escuchan en los puertos configurados; CPU normalizada por nucleos logicos.",
+                  "Red: bytes de adaptadores fisicos del equipo, no incluye necesariamente trafico localhost ni aisla el servicio.",
+                  "CPU igual a cero puede significar consumo muy bajo o muestreo insuficiente; no equivale a ausencia de actividad."
+              ],
+    "muestras":  [
+                     {
+                         "instante":  "2026-11-03T23:18:51.8986382-04:00",
+                         "cpuPorcentajeProcesos":  18.49,
+                         "ramBytesProcesos":  77893632,
+                         "redRecibidosBytesDeltaEquipo":  216,
+                         "redEnviadosBytesDeltaEquipo":  168,
+                         "latenciaTcpMsPorPuerto":  {
+                                                        "3000":  2.233
+                                                    },
+                         "procesos":  [
+                                          "20328"
+                                      ]
+                     },
+                     {
+                         "instante":  "2026-11-03T23:18:55.5085330-04:00",
+                         "cpuPorcentajeProcesos":  2.81,
+                         "ramBytesProcesos":  78426112,
+                         "redRecibidosBytesDeltaEquipo":  3125,
+                         "redEnviadosBytesDeltaEquipo":  239,
+                         "latenciaTcpMsPorPuerto":  {
+                                                        "3000":  1.079
+                                                    },
+                         "procesos":  [
+                                          "20328"
+                                      ]
+                     }
+                 ]
+}

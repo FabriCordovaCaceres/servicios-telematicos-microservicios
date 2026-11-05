@@ -1,0 +1,127 @@
+{
+  "tarea": "T4.6",
+  "requisito": "RQ14",
+  "arquitectura": "micro",
+  "fecha": "2026-11-05T02:08:43.080Z",
+  "ejecucion": "0b1c300d",
+  "resumen": {
+    "OK": 16,
+    "HALLAZGO": 0,
+    "ERROR": 0,
+    "OBSERVADO": 0
+  },
+  "pruebas": [
+    {
+      "prueba": "Gateway 6001 antes del fallo",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Tareas 5001 antes del fallo",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Notificaciones 5002 antes del fallo",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway tareas antes del fallo",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway notificaciones antes del fallo",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Tareas 5001 detenido",
+      "estado": "OK",
+      "esperado": "sin conexion",
+      "observado": "sin conexion",
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway sigue vivo sin tareas",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway responde a fallo de tareas",
+      "estado": "OK",
+      "esperado": "502/504",
+      "observado": 502,
+      "detalle": ""
+    },
+    {
+      "prueba": "Notificaciones siguen disponibles",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Tareas 5001 reiniciado",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": "200",
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway recupera tareas",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Notificaciones 5002 detenido",
+      "estado": "OK",
+      "esperado": "sin conexion",
+      "observado": "sin conexion",
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway responde a fallo de notificaciones",
+      "estado": "OK",
+      "esperado": "502/504",
+      "observado": 502,
+      "detalle": ""
+    },
+    {
+      "prueba": "Tareas siguen disponibles",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Notificaciones 5002 reiniciado",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": "200",
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway recupera notificaciones",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    }
+  ]
+}

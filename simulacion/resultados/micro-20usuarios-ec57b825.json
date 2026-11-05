@@ -1,0 +1,817 @@
+{
+  "requisito": "RQ14",
+  "tarea": "T4.4",
+  "arquitectura": "microservicios",
+  "gateway": "http://localhost:6001",
+  "usuarios": 20,
+  "ejecucion": "ec57b825",
+  "fecha": "2026-11-04T03:28:49.035Z",
+  "tareasCreadas": 20,
+  "operacionesRegistradas": 100,
+  "operacionesCRUD": 80,
+  "correctas": 72,
+  "errores": 28,
+  "tiempoTotalMs": 9235,
+  "resultados": [
+    {
+      "usuario": 1,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 191.81,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 2,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 539.19,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 3,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 580.25,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 4,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 614.78,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 5,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 650.92,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 6,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 688.78,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 7,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 694.44,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 8,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 699.72,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 9,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 721.88,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 10,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 753.24,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 11,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 770.98,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 12,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 785.12,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 13,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 807.13,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 14,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 832.09,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 15,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 848.72,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 16,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 863.43,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 17,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 892.96,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 18,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 910.2,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 19,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 972.38,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 20,
+      "operacion": "CREATE",
+      "codigo": 201,
+      "duracionMs": 992.12,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 1,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 69.85,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 2,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 116.9,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 3,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 139.29,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 4,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 217.03,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 5,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 307.19,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 6,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 368.6,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 8,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 424.93,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 7,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 455.79,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 10,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 458.3,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 11,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 470.17,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 9,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 504.56,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 12,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 519.23,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 17,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 525.42,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 13,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 574.5,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 14,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 677.16,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 15,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 683.26,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 16,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 700.58,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 18,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 726.58,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 19,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 731.91,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 20,
+      "operacion": "READ",
+      "codigo": 200,
+      "duracionMs": 743.26,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 1,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 973.51,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 2,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 1612.86,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 3,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 2127.25,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 4,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 2410.27,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 5,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 2541.95,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 6,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 2664.24,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 7,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 2799,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 8,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 3106.48,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 9,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 3226.95,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 10,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 3452.33,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 11,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 3616.08,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 12,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 3715.81,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 13,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 3854.26,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 14,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 3974.31,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 15,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 4082.13,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 16,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 4277.96,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 17,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 4532.14,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 18,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 4745.52,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 19,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 4882.7,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 20,
+      "operacion": "UPDATE",
+      "codigo": 200,
+      "duracionMs": 4986.39,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 1,
+      "operacion": "DELETE",
+      "codigo": 204,
+      "duracionMs": 164.54,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 2,
+      "operacion": "DELETE",
+      "codigo": 204,
+      "duracionMs": 171.87,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 3,
+      "operacion": "DELETE",
+      "codigo": 204,
+      "duracionMs": 154.46,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 4,
+      "operacion": "DELETE",
+      "codigo": 204,
+      "duracionMs": 152.07,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 5,
+      "operacion": "DELETE",
+      "codigo": 204,
+      "duracionMs": 163.45,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 6,
+      "operacion": "DELETE",
+      "codigo": 204,
+      "duracionMs": 190.66,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 20,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 181.08,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 19,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 231.93,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 18,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 257.2,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 16,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 281.66,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 15,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 295.69,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 14,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 301.4,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 13,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 317.1,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 17,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 324.64,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 12,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 338.34,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 9,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 356,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 11,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 357.16,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 10,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 373.86,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 7,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 430.25,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 8,
+      "operacion": "DELETE",
+      "codigo": 0,
+      "duracionMs": 432.88,
+      "correcto": false,
+      "error": "fetch failed"
+    },
+    {
+      "usuario": 1,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 404,
+      "duracionMs": 124.08,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 2,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 404,
+      "duracionMs": 93.39,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 3,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 404,
+      "duracionMs": 91.31,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 4,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 404,
+      "duracionMs": 86.13,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 5,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 404,
+      "duracionMs": 89.1,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 6,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 404,
+      "duracionMs": 164.61,
+      "correcto": true,
+      "error": null
+    },
+    {
+      "usuario": 7,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 211.65,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 8,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 256.12,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 9,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 275.86,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 10,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 317.01,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 11,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 336.12,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 12,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 363.61,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 13,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 384.04,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 14,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 405.75,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 15,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 454.19,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 16,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 457.35,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 17,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 472.03,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 18,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 485.34,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 19,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 508.82,
+      "correcto": false,
+      "error": null
+    },
+    {
+      "usuario": 20,
+      "operacion": "VERIFICAR_DELETE",
+      "codigo": 200,
+      "duracionMs": 515.95,
+      "correcto": false,
+      "error": null
+    }
+  ]
+}

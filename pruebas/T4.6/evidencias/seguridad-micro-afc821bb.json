@@ -1,0 +1,232 @@
+{
+  "tarea": "T4.6",
+  "requisito": "RQ14",
+  "arquitectura": "micro",
+  "fecha": "2026-11-05T01:03:03.269Z",
+  "ejecucion": "afc821bb",
+  "resumen": {
+    "OK": 24,
+    "HALLAZGO": 2,
+    "ERROR": 0,
+    "OBSERVADO": 5
+  },
+  "pruebas": [
+    {
+      "prueba": "Gateway: servicio disponible",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: cabeceras HTTP",
+      "estado": "OBSERVADO",
+      "esperado": "revision",
+      "observado": "{\"x-powered-by\":\"Express\",\"x-content-type-options\":null,\"strict-transport-security\":null}",
+      "detalle": "Ausencia de cabecera no prueba por si sola una vulnerabilidad"
+    },
+    {
+      "prueba": "Gateway: ID inexistente",
+      "estado": "OK",
+      "esperado": "404",
+      "observado": 404,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: POST sin titulo",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: POST titulo numerico",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: POST titulo vacio",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: JSON malformado",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: crear tarea temporal",
+      "estado": "OK",
+      "esperado": "201",
+      "observado": 201,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: PUT estado invalido",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: eliminar tarea temporal",
+      "estado": "OK",
+      "esperado": "204",
+      "observado": 204,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: titulo solo espacios",
+      "estado": "HALLAZGO",
+      "esperado": "rechazo",
+      "observado": 201,
+      "detalle": "Acepta titulo compuesto solo de espacios"
+    },
+    {
+      "prueba": "Gateway: limpiar titulo en blanco",
+      "estado": "OK",
+      "esperado": "204",
+      "observado": 204,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: metodo PATCH prohibido",
+      "estado": "OK",
+      "esperado": "405",
+      "observado": 405,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: servicio disponible",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: cabeceras HTTP",
+      "estado": "OBSERVADO",
+      "esperado": "revision",
+      "observado": "{\"x-powered-by\":\"Express\",\"x-content-type-options\":null,\"strict-transport-security\":null}",
+      "detalle": "Ausencia de cabecera no prueba por si sola una vulnerabilidad"
+    },
+    {
+      "prueba": "Servicio de tareas directo: ID inexistente",
+      "estado": "OK",
+      "esperado": "404",
+      "observado": 404,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: POST sin titulo",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: POST titulo numerico",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: POST titulo vacio",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: JSON malformado",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: crear tarea temporal",
+      "estado": "OK",
+      "esperado": "201",
+      "observado": 201,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: PUT estado invalido",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: eliminar tarea temporal",
+      "estado": "OK",
+      "esperado": "204",
+      "observado": 204,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: titulo solo espacios",
+      "estado": "HALLAZGO",
+      "esperado": "rechazo",
+      "observado": 201,
+      "detalle": "Acepta titulo compuesto solo de espacios"
+    },
+    {
+      "prueba": "Servicio de tareas directo: limpiar titulo en blanco",
+      "estado": "OK",
+      "esperado": "204",
+      "observado": 204,
+      "detalle": ""
+    },
+    {
+      "prueba": "Puerto local 5001",
+      "estado": "OK",
+      "esperado": "ABIERTO",
+      "observado": "ABIERTO",
+      "detalle": "Alcance: 127.0.0.1; revisar LocalAddress con PowerShell para exposicion externa"
+    },
+    {
+      "prueba": "TLS verificado 5001",
+      "estado": "OBSERVADO",
+      "esperado": "TLS_VERIFICADO",
+      "observado": "ERR_SSL_PACKET_LENGTH_TOO_LONG",
+      "detalle": "Una prueba local negativa no descarta TLS en un proxy inverso externo"
+    },
+    {
+      "prueba": "Puerto local 5002",
+      "estado": "OK",
+      "esperado": "ABIERTO",
+      "observado": "ABIERTO",
+      "detalle": "Alcance: 127.0.0.1; revisar LocalAddress con PowerShell para exposicion externa"
+    },
+    {
+      "prueba": "TLS verificado 5002",
+      "estado": "OBSERVADO",
+      "esperado": "TLS_VERIFICADO",
+      "observado": "ERR_SSL_PACKET_LENGTH_TOO_LONG",
+      "detalle": "Una prueba local negativa no descarta TLS en un proxy inverso externo"
+    },
+    {
+      "prueba": "Puerto local 6001",
+      "estado": "OK",
+      "esperado": "ABIERTO",
+      "observado": "ABIERTO",
+      "detalle": "Alcance: 127.0.0.1; revisar LocalAddress con PowerShell para exposicion externa"
+    },
+    {
+      "prueba": "TLS verificado 6001",
+      "estado": "OBSERVADO",
+      "esperado": "TLS_VERIFICADO",
+      "observado": "ERR_SSL_PACKET_LENGTH_TOO_LONG",
+      "detalle": "Una prueba local negativa no descarta TLS en un proxy inverso externo"
+    }
+  ]
+}

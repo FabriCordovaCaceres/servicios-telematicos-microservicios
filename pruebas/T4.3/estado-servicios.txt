@@ -1,0 +1,17 @@
+﻿T4.3 - Estado de los microservicios
+SERVICIO DE TAREAS
+{
+    "servicio":  "tareas",
+    "estado":  "ok"
+}
+SERVICIO DE NOTIFICACIONES
+{
+    "servicio":  "notificaciones",
+    "estado":  "ok",
+    "clientesConectados":  1
+}
+API GATEWAY
+{
+    "servicio":  "api-gateway",
+    "estado":  "ok"
+}
