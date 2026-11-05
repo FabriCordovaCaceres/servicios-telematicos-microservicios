@@ -3,6 +3,7 @@ import express, {
     type Request,
     type Response,
   } from "express";
+  import { cors } from "./cors";
   
   const app = express();
   
@@ -15,6 +16,7 @@ import express, {
   const NOTIFICACIONES_URL =
     process.env.NOTIFICACIONES_URL ?? "http://localhost:5002";
   
+  app.use(cors);
   app.use(express.json());
   
   
