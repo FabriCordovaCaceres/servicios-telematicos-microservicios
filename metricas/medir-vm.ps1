@@ -1,6 +1,7 @@
 ﻿param(
     [Parameter(Mandatory = $true)][ValidateSet('cs','p2p','micro')][string]$Arquitectura,
-    [Parameter(Mandatory = $true)][ValidateSet(2,3,5)][int]$Usuarios,
+    [Parameter(Mandatory = $true)][ValidateSet(2,3,5,10,20)][int]$Usuarios,
+    [ValidateSet('T3','T4.4')][string]$Tarea = 'T3',
     [ValidateRange(1,100)][int]$Repeticiones = 1,
     [ValidateRange(200,10000)][int]$IntervaloMs = 500,
     [string]$VM1 = '192.168.56.11',
@@ -17,7 +18,12 @@
 #   - CPU, RAM y red de cada contenedor: "docker stats" en cada VM, por SSH.
 # Requisito: acceso SSH sin contrasena (clave publica) a VM1 y VM2.
 
+# Sprint 4: -Tarea T4.4 usa simulacion\rendimiento-t4.4.mjs (2, 5, 10 o 20 usuarios)
+# y guarda en pruebas\T4.4\resultados-vm. Sin -Tarea se comporta como en el Sprint 3.
+
 $ErrorActionPreference = 'Stop'
+if ($Tarea -eq 'T3' -and @(2,3,5) -notcontains $Usuarios) { throw 'Con -Tarea T3 los usuarios deben ser 2, 3 o 5.' }
+if ($Tarea -eq 'T4.4' -and @(2,5,10,20) -notcontains $Usuarios) { throw 'Con -Tarea T4.4 los usuarios deben ser 2, 5, 10 o 20.' }
 $raizMicro = Split-Path -Parent $PSScriptRoot
 $raizTelematicos = Split-Path -Parent $raizMicro
 
@@ -45,9 +51,10 @@ $config = switch ($Arquitectura) {
     } }
 }
 
-$simulador = Join-Path $config.Carpeta 'simulacion\concurrencia.mjs'
+$rutaSimulador = if ($Tarea -eq 'T4.4') { 'simulacion\rendimiento-t4.4.mjs' } else { 'simulacion\concurrencia.mjs' }
+$simulador = Join-Path $config.Carpeta $rutaSimulador
 $resultadosSimulador = Join-Path $config.Carpeta 'simulacion\resultados'
-$salida = Join-Path $raizMicro 'metricas\resultados'
+$salida = if ($Tarea -eq 'T4.4') { Join-Path $raizMicro 'pruebas\T4.4\resultados-vm' } else { Join-Path $raizMicro 'metricas\resultados' }
 $temporal = Join-Path $salida 'tmp'
 
 if (-not (Test-Path -LiteralPath $simulador -PathType Leaf)) { throw "No se encontro el simulador: $simulador" }
@@ -260,8 +267,8 @@ for ($repeticion = 1; $repeticion -le $Repeticiones; $repeticion++) {
     }
 
     $resumen = [ordered]@{
-        requisito = 'RQ12'
-        tarea = 'T3.5/T3.6'
+        requisito = $(if ($Tarea -eq 'T4.4') { 'RQ14' } else { 'RQ12' })
+        tarea = $(if ($Tarea -eq 'T4.4') { 'T4.4' } else { 'T3.5/T3.6' })
         entorno = 'virtualizado (VM1 y VM2, red Host-Only)'
         arquitectura = $Arquitectura
         usuarios = $Usuarios
@@ -293,7 +300,8 @@ for ($repeticion = 1; $repeticion -le $Repeticiones; $repeticion++) {
         )
     }
 
-    $nombre = 'metricas-vm-{0}-{1}usuarios-{2}-{3}.json' -f $Arquitectura, $Usuarios, (Get-Date -Format 'yyyyMMdd-HHmmssfff'), $repeticion
+    $prefijo = if ($Tarea -eq 'T4.4') { 'metricas-vm-t4.4' } else { 'metricas-vm' }
+    $nombre = '{4}-{0}-{1}usuarios-{2}-{3}.json' -f $Arquitectura, $Usuarios, (Get-Date -Format 'yyyyMMdd-HHmmssfff'), $repeticion, $prefijo
     $archivo = Join-Path $salida $nombre
     $resumen | ConvertTo-Json -Depth 8 | Set-Content -Path $archivo -Encoding UTF8
     foreach ($m in $monitores) { Remove-Item -LiteralPath $m.Archivo, $m.Error -ErrorAction SilentlyContinue }

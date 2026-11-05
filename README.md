@@ -315,3 +315,33 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\metricas\medir-vm.ps1 
 registra la latencia TCP desde el anfitrión y el CPU, RAM y red de cada contenedor con `docker stats` (por SSH).
 Los resultados se guardan en `metricas/resultados/metricas-vm-*.json`. El script `medir.ps1` original
 se conserva para la ejecución local (localhost).
+
+## Sprint 4 — Pruebas funcionales y no funcionales (RQ13, RQ14)
+
+| Tarea | Archivo | Qué prueba |
+|---|---|---|
+| T4.3 | `pruebas/T4.3/funcionales-t4.3.test.mjs` (y `RESULTADOS.md`, pruebas manuales) | Salud de los servicios, CRUD por el Gateway, validaciones, eventos WebSocket y errores del Gateway (22 comprobaciones) |
+| T4.4 | `simulacion/rendimiento-t4.4.mjs`, `metricas/medir-t4.4.ps1`, `metricas/medir-vm.ps1 -Tarea T4.4` | Rendimiento con 2, 5, 10 y 20 usuarios en las tres arquitecturas |
+| T4.5 | `pruebas/T4.5/comunicacion-t4.5.mjs` | Interrupción del cliente WebSocket, reconexión y eventos duplicados |
+| T4.6 | `pruebas/T4.6/seguridad-t4.6.mjs`, `pruebas/T4.6/fallos-t4.6.mjs` | Validación de entradas, puertos, TLS y tolerancia a fallos de cada servicio |
+
+```powershell
+npm test                                              # local (localhost)
+$env:GATEWAY_URL="http://192.168.56.12:6001"           # entorno virtualizado (VM2)
+$env:TAREAS_URL="http://192.168.56.12:5001"
+$env:NOTIFICACIONES_URL="http://192.168.56.12:5002"
+npm test
+node pruebas/T4.5/comunicacion-t4.5.mjs
+node pruebas/T4.6/seguridad-t4.6.mjs
+node pruebas/T4.6/fallos-t4.6.mjs                      # pide detener/reiniciar tareas y notificaciones (docker stop/start)
+
+# Rendimiento T4.4 contra las VMs (2, 5, 10 o 20 usuarios)
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\metricas\medir-vm.ps1 -Tarea T4.4 -Arquitectura micro -Usuarios 20 -Repeticiones 3
+```
+
+`medir-vm.ps1 -Tarea T4.4` guarda los resultados en `pruebas/T4.4/resultados-vm/`. Sin `-Tarea` funciona como en el Sprint 3.
+Si una operación falla por la red, el simulador de T4.4 registra también el código interno del error (por ejemplo `ECONNRESET`).
+
+Cambios del Sprint 4 en los servicios:
+- **CORS en el Gateway** (`gateway/src/cors.ts`): permite que la interfaz gráfica consuma la API.
+- **Validación:** el servicio de tareas rechaza con HTTP 400 un título compuesto solo de espacios en `POST` y `PUT`.

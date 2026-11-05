@@ -6,12 +6,12 @@ import path from "node:path";
 import { randomUUID } from "node:crypto";
 
 // T4.4 - Simulacion de concurrencia en Microservicios
-// Ejemplo: node simulacion/concurrencia.mjs 2
+// Ejemplo: node simulacion/rendimiento-t4.4.mjs 2
 
 const usuarios = Number(process.argv[2]);
 
 if (![2, 5, 10, 20].includes(usuarios)) {
-  console.error("Uso: node simulacion/concurrencia.mjs 2|5|10|20");
+  console.error("Uso: node simulacion/rendimiento-t4.4.mjs 2|5|10|20");
   process.exit(1);
 }
 
@@ -69,7 +69,10 @@ async function solicitar(metodo, ruta, datos) {
       duracionMs: Math.round(
         (performance.now() - inicio) * 100
       ) / 100,
-      error: error.message
+      // Sprint 4: se guarda también la causa interna (p. ej. ECONNRESET)
+      error: error.cause?.code
+        ? `${error.message} (${error.cause.code})`
+        : error.message
     };
   }
 }
