@@ -1,0 +1,35 @@
+{
+  "requisito": "RQ14",
+  "tarea": "T4.5",
+  "arquitectura": "microservicios",
+  "entorno": "virtualizado",
+  "fecha": "2026-11-06T19:09:37.198Z",
+  "ejecucion": "9f98362b",
+  "resultados": [
+    {
+      "prueba": "Conexion inicial",
+      "resultado": "OK",
+      "detalle": "WebSocket del notificador conectado."
+    },
+    {
+      "prueba": "Interrupcion de notificaciones",
+      "resultado": "OBSERVADO",
+      "detalle": "El CRUD crea la tarea aunque el cliente WS este desconectado."
+    },
+    {
+      "prueba": "Reconexion y recuperacion",
+      "resultado": "SIN_REENVIO",
+      "detalle": "Cliente WS reconectado; eventos antiguos reenviados: 0; tarea consultable por GET."
+    },
+    {
+      "prueba": "Eventos nuevos tras reconexion",
+      "resultado": "OK",
+      "detalle": "Se reciben nuevas notificaciones, pero no se garantiza recuperar las perdidas."
+    },
+    {
+      "prueba": "Mensajes duplicados",
+      "resultado": "NO_MITIGADO",
+      "detalle": "Dos POST /eventos identicos generan dos notificaciones WS; no hay deduplicacion."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+﻿
+> microservicios@1.0.0 test
+> node --test pruebas/T4.3/funcionales-t4.3.test.mjs
+
+TAP version 13
+# Gateway: http://192.168.56.12:6001 | Tareas: http://192.168.56.12:5001 | Notificaciones: http://192.168.56.12:5002
+# OK PF-MS-01: Gateway activo
+# OK PF-MS-02: Servicio de tareas activo
+# OK PF-MS-03: Servicio de notificaciones activo
+# OK PF-MS-04: Gateway se comunica con notificaciones
+# OK PF-MS-05: Cliente WebSocket conectado a notificaciones
+# OK PF-MS-06: Titulo vacio rechazado (400)
+# OK PF-MS-07: Titulo numerico rechazado (400)
+# OK PF-MS-08: Titulo solo espacios rechazado (400)
+# OK PF-MS-09: Tarea creada mediante el Gateway (201, version 1)
+# OK PF-MS-10: Evento tarea:creada recibido por WebSocket
+# OK PF-MS-11: Tarea consultada mediante el Gateway
+# OK PF-MS-12: Los datos coinciden con el servicio de tareas
+# OK PF-MS-13: Estado invalido rechazado (400)
+# OK PF-MS-14: Edicion con titulo solo espacios rechazada (400)
+# OK PF-MS-15: Tarea actualizada (200, en_progreso, version 2)
+# OK PF-MS-16: Evento tarea:actualizada recibido por WebSocket
+# OK PF-MS-17: Tarea eliminada (204)
+# OK PF-MS-18: Evento tarea:eliminada recibido por WebSocket
+# OK PF-MS-19: La tarea eliminada ya no existe (404)
+# OK PF-MS-20: Eliminar tarea inexistente (404)
+# OK PF-MS-21: Metodo no permitido en el Gateway (405)
+# OK PF-MS-22: Evento invalido rechazado por notificaciones (400)
+# RESULTADO: 22 COMPROBACIONES MICROSERVICIOS APROBADAS
+# Subtest: T4.3 - Pruebas funcionales Microservicios (Gateway, tareas y notificaciones)
+ok 1 - T4.3 - Pruebas funcionales Microservicios (Gateway, tareas y notificaciones)
+  ---
+  duration_ms: 1324.1391
+  ...
+1..1
+# tests 1
+# suites 0
+# pass 1
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1463.9205

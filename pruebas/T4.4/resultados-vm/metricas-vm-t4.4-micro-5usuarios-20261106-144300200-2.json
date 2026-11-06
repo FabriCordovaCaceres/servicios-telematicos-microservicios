@@ -1,0 +1,89 @@
+﻿{
+    "requisito":  "RQ14",
+    "tarea":  "T4.4",
+    "entorno":  "virtualizado (VM1 y VM2, red Host-Only)",
+    "arquitectura":  "micro",
+    "usuarios":  5,
+    "repeticion":  2,
+    "destinos":  "http://192.168.56.12:6001",
+    "inicio":  "2026-11-06T14:42:57.2984170-04:00",
+    "fin":  "2026-11-06T14:42:58.3326220-04:00",
+    "duracionTotalMs":  1034.21,
+    "codigoSalidaSimulador":  0,
+    "archivoSimulador":  "C:\\Users\\warit\\telematicos\\servicios-telematicos-microservicios\\simulacion\\resultados\\micro-5usuarios-71e32755.json",
+    "operacionesEsperadas":  25,
+    "operacionesRegistradas":  25,
+    "correctas":  25,
+    "errores":  0,
+    "valido":  true,
+    "tiempoRespuestaMedioMs":  60.041,
+    "tiempoRespuestaMaximoMs":  116.32,
+    "latenciaConexionTcpMediaMs":  2.936,
+    "cpuMediaTotalContenedoresPorcentaje":  29.58,
+    "ramMediaTotalContenedoresMB":  240.73,
+    "contenedores":  [
+                         {
+                             "contenedor":  "tele-api-gateway",
+                             "vm":  "192.168.56.12",
+                             "muestras":  6,
+                             "cpuMediaPorcentaje":  13.793,
+                             "cpuMaximaPorcentaje":  27.25,
+                             "ramMediaMB":  75.14,
+                             "redRecibidaBytes":  24700,
+                             "redEnviadaBytes":  29500
+                         },
+                         {
+                             "contenedor":  "tele-micro-tareas",
+                             "vm":  "192.168.56.12",
+                             "muestras":  6,
+                             "cpuMediaPorcentaje":  11.257,
+                             "cpuMaximaPorcentaje":  22.55,
+                             "ramMediaMB":  53.59,
+                             "redRecibidaBytes":  17500,
+                             "redEnviadaBytes":  23100
+                         },
+                         {
+                             "contenedor":  "tele-micro-notificaciones",
+                             "vm":  "192.168.56.12",
+                             "muestras":  6,
+                             "cpuMediaPorcentaje":  4.53,
+                             "cpuMaximaPorcentaje":  7.82,
+                             "ramMediaMB":  112,
+                             "redRecibidaBytes":  11300,
+                             "redEnviadaBytes":  7100
+                         }
+                     ],
+    "latenciasTcp":  [
+                         {
+                             "destino":  "192.168.56.12:6001",
+                             "ms":  1.957
+                         },
+                         {
+                             "destino":  "192.168.56.12:5001",
+                             "ms":  1.61
+                         },
+                         {
+                             "destino":  "192.168.56.12:5002",
+                             "ms":  3.696
+                         },
+                         {
+                             "destino":  "192.168.56.12:6001",
+                             "ms":  2.921
+                         },
+                         {
+                             "destino":  "192.168.56.12:5001",
+                             "ms":  2.374
+                         },
+                         {
+                             "destino":  "192.168.56.12:5002",
+                             "ms":  5.059
+                         }
+                     ],
+    "notas":  [
+                  "Tiempo de respuesta HTTP: promedio de resultados[].duracionMs del simulador, medido desde el anfitrion hasta las VMs.",
+                  "Latencia: tiempo de conexion TCP desde el anfitrion a la IP y puerto de cada servicio (red Host-Only).",
+                  "CPU y RAM: docker stats de cada contenedor; CPU en % de un nucleo (100% = 1 vCPU).",
+                  "Red: diferencia del contador NetIO del contenedor entre la primera y la ultima lectura.",
+                  "docker stats se actualiza aprox. cada segundo; en escenarios muy cortos hay pocas muestras."
+              ]
+}

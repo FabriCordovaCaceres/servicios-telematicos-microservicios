@@ -1,0 +1,71 @@
+﻿{
+    "requisito":  "RQ14",
+    "tarea":  "T4.4",
+    "entorno":  "virtualizado (VM1 y VM2, red Host-Only)",
+    "arquitectura":  "p2p",
+    "usuarios":  10,
+    "repeticion":  1,
+    "destinos":  "http://192.168.56.11:4001,http://192.168.56.12:4002",
+    "inicio":  "2026-11-06T14:41:53.8852003-04:00",
+    "fin":  "2026-11-06T14:41:54.9377305-04:00",
+    "duracionTotalMs":  1052.53,
+    "codigoSalidaSimulador":  0,
+    "archivoSimulador":  "C:\\Users\\warit\\telematicos\\servicios-telematicos-p2p\\simulacion\\resultados\\p2p-10usuarios-3f7be068.json",
+    "operacionesEsperadas":  40,
+    "operacionesRegistradas":  40,
+    "correctas":  40,
+    "errores":  0,
+    "valido":  true,
+    "tiempoRespuestaMedioMs":  24.955,
+    "tiempoRespuestaMaximoMs":  68.74,
+    "latenciaConexionTcpMediaMs":  1.932,
+    "cpuMediaTotalContenedoresPorcentaje":  21.548,
+    "ramMediaTotalContenedoresMB":  163.54,
+    "contenedores":  [
+                         {
+                             "contenedor":  "tele-p2p-1",
+                             "vm":  "192.168.56.11",
+                             "muestras":  7,
+                             "cpuMediaPorcentaje":  9.799,
+                             "cpuMaximaPorcentaje":  33.64,
+                             "ramMediaMB":  82.03,
+                             "redRecibidaBytes":  23300,
+                             "redEnviadaBytes":  40000
+                         },
+                         {
+                             "contenedor":  "tele-p2p-2",
+                             "vm":  "192.168.56.12",
+                             "muestras":  7,
+                             "cpuMediaPorcentaje":  11.749,
+                             "cpuMaximaPorcentaje":  40.36,
+                             "ramMediaMB":  81.51,
+                             "redRecibidaBytes":  24100,
+                             "redEnviadaBytes":  40000
+                         }
+                     ],
+    "latenciasTcp":  [
+                         {
+                             "destino":  "192.168.56.11:4001",
+                             "ms":  1.646
+                         },
+                         {
+                             "destino":  "192.168.56.12:4002",
+                             "ms":  1.756
+                         },
+                         {
+                             "destino":  "192.168.56.11:4001",
+                             "ms":  2.128
+                         },
+                         {
+                             "destino":  "192.168.56.12:4002",
+                             "ms":  2.2
+                         }
+                     ],
+    "notas":  [
+                  "Tiempo de respuesta HTTP: promedio de resultados[].duracionMs del simulador, medido desde el anfitrion hasta las VMs.",
+                  "Latencia: tiempo de conexion TCP desde el anfitrion a la IP y puerto de cada servicio (red Host-Only).",
+                  "CPU y RAM: docker stats de cada contenedor; CPU en % de un nucleo (100% = 1 vCPU).",
+                  "Red: diferencia del contador NetIO del contenedor entre la primera y la ultima lectura.",
+                  "docker stats se actualiza aprox. cada segundo; en escenarios muy cortos hay pocas muestras."
+              ]
+}

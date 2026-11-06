@@ -1,0 +1,245 @@
+{
+  "tarea": "T4.6",
+  "requisito": "RQ14",
+  "arquitectura": "micro",
+  "fecha": "2026-11-06T19:26:57.178Z",
+  "ejecucion": "365fec62",
+  "entorno": "virtualizado (direcciones por variables de entorno)",
+  "endpoints": [
+    {
+      "nombre": "Gateway",
+      "base": "http://192.168.56.12:6001",
+      "ruta": "/api/tareas"
+    },
+    {
+      "nombre": "Servicio de tareas directo",
+      "base": "http://192.168.56.12:5001",
+      "ruta": "/tasks"
+    }
+  ],
+  "resumen": {
+    "OK": 26,
+    "HALLAZGO": 0,
+    "ERROR": 0,
+    "OBSERVADO": 5
+  },
+  "pruebas": [
+    {
+      "prueba": "Gateway: servicio disponible",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: cabeceras HTTP",
+      "estado": "OBSERVADO",
+      "esperado": "revision",
+      "observado": "{\"x-powered-by\":\"Express\",\"x-content-type-options\":null,\"strict-transport-security\":null}",
+      "detalle": "Ausencia de cabecera no prueba por si sola una vulnerabilidad"
+    },
+    {
+      "prueba": "Gateway: ID inexistente",
+      "estado": "OK",
+      "esperado": "404",
+      "observado": 404,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: POST sin titulo",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: POST titulo numerico",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: POST titulo vacio",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: JSON malformado",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: crear tarea temporal",
+      "estado": "OK",
+      "esperado": "201",
+      "observado": 201,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: PUT titulo solo espacios",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: PUT estado invalido",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: eliminar tarea temporal",
+      "estado": "OK",
+      "esperado": "204",
+      "observado": 204,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: titulo solo espacios",
+      "estado": "OK",
+      "esperado": "rechazo",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Gateway: metodo PATCH prohibido",
+      "estado": "OK",
+      "esperado": "405",
+      "observado": 405,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: servicio disponible",
+      "estado": "OK",
+      "esperado": "200",
+      "observado": 200,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: cabeceras HTTP",
+      "estado": "OBSERVADO",
+      "esperado": "revision",
+      "observado": "{\"x-powered-by\":\"Express\",\"x-content-type-options\":null,\"strict-transport-security\":null}",
+      "detalle": "Ausencia de cabecera no prueba por si sola una vulnerabilidad"
+    },
+    {
+      "prueba": "Servicio de tareas directo: ID inexistente",
+      "estado": "OK",
+      "esperado": "404",
+      "observado": 404,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: POST sin titulo",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: POST titulo numerico",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: POST titulo vacio",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: JSON malformado",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: crear tarea temporal",
+      "estado": "OK",
+      "esperado": "201",
+      "observado": 201,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: PUT titulo solo espacios",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: PUT estado invalido",
+      "estado": "OK",
+      "esperado": "400",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: eliminar tarea temporal",
+      "estado": "OK",
+      "esperado": "204",
+      "observado": 204,
+      "detalle": ""
+    },
+    {
+      "prueba": "Servicio de tareas directo: titulo solo espacios",
+      "estado": "OK",
+      "esperado": "rechazo",
+      "observado": 400,
+      "detalle": ""
+    },
+    {
+      "prueba": "Puerto 5001 en 192.168.56.12",
+      "estado": "OK",
+      "esperado": "ABIERTO",
+      "observado": "ABIERTO",
+      "detalle": "Alcance: accesible desde el equipo de pruebas hacia 192.168.56.12"
+    },
+    {
+      "prueba": "TLS verificado 5001",
+      "estado": "OBSERVADO",
+      "esperado": "TLS_VERIFICADO",
+      "observado": "ERR_SSL_WRONG_VERSION_NUMBER",
+      "detalle": "Una prueba local negativa no descarta TLS en un proxy inverso externo"
+    },
+    {
+      "prueba": "Puerto 5002 en 192.168.56.12",
+      "estado": "OK",
+      "esperado": "ABIERTO",
+      "observado": "ABIERTO",
+      "detalle": "Alcance: accesible desde el equipo de pruebas hacia 192.168.56.12"
+    },
+    {
+      "prueba": "TLS verificado 5002",
+      "estado": "OBSERVADO",
+      "esperado": "TLS_VERIFICADO",
+      "observado": "ERR_SSL_WRONG_VERSION_NUMBER",
+      "detalle": "Una prueba local negativa no descarta TLS en un proxy inverso externo"
+    },
+    {
+      "prueba": "Puerto 6001 en 192.168.56.12",
+      "estado": "OK",
+      "esperado": "ABIERTO",
+      "observado": "ABIERTO",
+      "detalle": "Alcance: accesible desde el equipo de pruebas hacia 192.168.56.12"
+    },
+    {
+      "prueba": "TLS verificado 6001",
+      "estado": "OBSERVADO",
+      "esperado": "TLS_VERIFICADO",
+      "observado": "ERR_SSL_WRONG_VERSION_NUMBER",
+      "detalle": "Una prueba local negativa no descarta TLS en un proxy inverso externo"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+﻿{
+    "requisito":  "RQ14",
+    "tarea":  "T4.4",
+    "entorno":  "virtualizado (VM1 y VM2, red Host-Only)",
+    "arquitectura":  "cs",
+    "usuarios":  2,
+    "repeticion":  1,
+    "destinos":  "http://192.168.56.11:3000",
+    "inicio":  "2026-11-06T14:40:16.3651138-04:00",
+    "fin":  "2026-11-06T14:40:16.9103165-04:00",
+    "duracionTotalMs":  545.2,
+    "codigoSalidaSimulador":  0,
+    "archivoSimulador":  "C:\\Users\\warit\\telematicos\\servicios-telematicos-cliente-servidor\\simulacion\\resultados\\cs-2usuarios-087e18ca.json",
+    "operacionesEsperadas":  8,
+    "operacionesRegistradas":  8,
+    "correctas":  8,
+    "errores":  0,
+    "valido":  true,
+    "tiempoRespuestaMedioMs":  30.561,
+    "tiempoRespuestaMaximoMs":  91.43,
+    "latenciaConexionTcpMediaMs":  1.909,
+    "cpuMediaTotalContenedoresPorcentaje":  0.255,
+    "ramMediaTotalContenedoresMB":  74.24,
+    "contenedores":  [
+                         {
+                             "contenedor":  "tele-cs",
+                             "vm":  "192.168.56.11",
+                             "muestras":  4,
+                             "cpuMediaPorcentaje":  0.255,
+                             "cpuMaximaPorcentaje":  0.51,
+                             "ramMediaMB":  74.24,
+                             "redRecibidaBytes":  0,
+                             "redEnviadaBytes":  0
+                         }
+                     ],
+    "latenciasTcp":  [
+                         {
+                             "destino":  "192.168.56.11:3000",
+                             "ms":  1.909
+                         }
+                     ],
+    "notas":  [
+                  "Tiempo de respuesta HTTP: promedio de resultados[].duracionMs del simulador, medido desde el anfitrion hasta las VMs.",
+                  "Latencia: tiempo de conexion TCP desde el anfitrion a la IP y puerto de cada servicio (red Host-Only).",
+                  "CPU y RAM: docker stats de cada contenedor; CPU en % de un nucleo (100% = 1 vCPU).",
+                  "Red: diferencia del contador NetIO del contenedor entre la primera y la ultima lectura.",
+                  "docker stats se actualiza aprox. cada segundo; en escenarios muy cortos hay pocas muestras."
+              ]
+}
