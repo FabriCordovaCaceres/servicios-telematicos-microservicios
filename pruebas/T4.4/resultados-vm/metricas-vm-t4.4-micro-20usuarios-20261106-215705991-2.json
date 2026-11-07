@@ -1,0 +1,113 @@
+﻿{
+    "requisito":  "RQ14",
+    "tarea":  "T4.4",
+    "entorno":  "virtualizado (VM1 y VM2, red Host-Only)",
+    "arquitectura":  "micro",
+    "usuarios":  20,
+    "repeticion":  2,
+    "destinos":  "http://192.168.56.12:6001",
+    "inicio":  "2026-11-06T21:57:02.0487638-04:00",
+    "fin":  "2026-11-06T21:57:04.1173385-04:00",
+    "duracionTotalMs":  2068.57,
+    "codigoSalidaSimulador":  0,
+    "archivoSimulador":  "C:\\Users\\warit\\telematicos\\servicios-telematicos-microservicios\\simulacion\\resultados\\micro-20usuarios-36c6d4e9.json",
+    "operacionesEsperadas":  100,
+    "operacionesRegistradas":  100,
+    "correctas":  100,
+    "errores":  0,
+    "valido":  true,
+    "tiempoRespuestaMedioMs":  187.525,
+    "tiempoRespuestaMaximoMs":  494.71,
+    "latenciaConexionTcpMediaMs":  3.341,
+    "cpuMediaTotalContenedoresPorcentaje":  61.528,
+    "ramMediaTotalContenedoresMB":  266.99,
+    "contenedores":  [
+                         {
+                             "contenedor":  "tele-api-gateway",
+                             "vm":  "192.168.56.12",
+                             "muestras":  8,
+                             "cpuMediaPorcentaje":  28.495,
+                             "cpuMaximaPorcentaje":  71.5,
+                             "ramMediaMB":  70.38,
+                             "redRecibidaBytes":  96000,
+                             "redEnviadaBytes":  112000
+                         },
+                         {
+                             "contenedor":  "tele-micro-tareas",
+                             "vm":  "192.168.56.12",
+                             "muestras":  8,
+                             "cpuMediaPorcentaje":  26.055,
+                             "cpuMaximaPorcentaje":  66.55,
+                             "ramMediaMB":  85.79,
+                             "redRecibidaBytes":  69000,
+                             "redEnviadaBytes":  94000
+                         },
+                         {
+                             "contenedor":  "tele-micro-notificaciones",
+                             "vm":  "192.168.56.12",
+                             "muestras":  8,
+                             "cpuMediaPorcentaje":  6.978,
+                             "cpuMaximaPorcentaje":  17.94,
+                             "ramMediaMB":  110.82,
+                             "redRecibidaBytes":  44000,
+                             "redEnviadaBytes":  27000
+                         }
+                     ],
+    "latenciasTcp":  [
+                         {
+                             "destino":  "192.168.56.12:6001",
+                             "ms":  2.245
+                         },
+                         {
+                             "destino":  "192.168.56.12:5001",
+                             "ms":  2.698
+                         },
+                         {
+                             "destino":  "192.168.56.12:5002",
+                             "ms":  2.524
+                         },
+                         {
+                             "destino":  "192.168.56.12:6001",
+                             "ms":  3.343
+                         },
+                         {
+                             "destino":  "192.168.56.12:5001",
+                             "ms":  6.242
+                         },
+                         {
+                             "destino":  "192.168.56.12:5002",
+                             "ms":  2.152
+                         },
+                         {
+                             "destino":  "192.168.56.12:6001",
+                             "ms":  3.14
+                         },
+                         {
+                             "destino":  "192.168.56.12:5001",
+                             "ms":  3.303
+                         },
+                         {
+                             "destino":  "192.168.56.12:5002",
+                             "ms":  2.145
+                         },
+                         {
+                             "destino":  "192.168.56.12:6001",
+                             "ms":  4.806
+                         },
+                         {
+                             "destino":  "192.168.56.12:5001",
+                             "ms":  5.133
+                         },
+                         {
+                             "destino":  "192.168.56.12:5002",
+                             "ms":  2.359
+                         }
+                     ],
+    "notas":  [
+                  "Tiempo de respuesta HTTP: promedio de resultados[].duracionMs del simulador, medido desde el anfitrion hasta las VMs.",
+                  "Latencia: tiempo de conexion TCP desde el anfitrion a la IP y puerto de cada servicio (red Host-Only).",
+                  "CPU y RAM: docker stats de cada contenedor; CPU en % de un nucleo (100% = 1 vCPU).",
+                  "Red: diferencia del contador NetIO del contenedor entre la primera y la ultima lectura.",
+                  "docker stats se actualiza aprox. cada segundo; en escenarios muy cortos hay pocas muestras."
+              ]
+}
